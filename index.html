@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrario di Cesare</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Cifrario di Cesare di Lorenzo Curzi, 5H</h1>
+
+    <table border="0">
+        <tr>
+            <td>
+                Inserire la frase da cifrare: 
+            </td>
+
+            <td>
+                <input type="text" name="fraseDaCifrare" id="fraseDaCifrare">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Inserire la chiave che si vuole utilizzare:
+            </td>
+
+            <td>
+                <input type="number" name="chiaveCifratura" id="chiaveCifratura">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Cifra" onclick="Cifra()">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Frase cifrata: 
+            </td>
+
+            <td>
+                <textarea name="risultatoCifratura" id="risultatoCifratura" cols="21" rows="1"></textarea>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
