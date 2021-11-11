@@ -13,6 +13,12 @@
     <table border="0">
         <tr>
             <td>
+                <h2>Cifratura</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
                 Inserire la frase da cifrare: 
             </td>
 
@@ -44,6 +50,50 @@
 
             <td>
                 <textarea name="risultatoCifratura" id="risultatoCifratura" cols="21" rows="1"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <table border="0">
+        <tr>
+            <td>
+                <h2>Decifratura</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Inserire la frase da decifrare: 
+            </td>
+
+            <td>
+                <input type="text" name="fraseDaDecifrare" id="fraseDaDecifrare">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Inserire la chiave che si vuole utilizzare:
+            </td>
+
+            <td>
+                <input type="number" name="chiaveDecifratura" id="chiaveDecifratura">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="Decifra" onclick="Decifratura()">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Frase decifrata: 
+            </td>
+
+            <td>
+                <textarea name="risultatoDecifratura" id="risultatoDecifratura" cols="21" rows="1"></textarea>
             </td>
         </tr>
     </table>
