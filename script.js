@@ -2,11 +2,11 @@ var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toUpperCase().split("");
 
 //Cifratura
 function Cifra(){
-    var fraseDaCifrare = document.getElementById("fraseDaCifrare").value.toUpperCase().split("");
+    var fraseDaCifrare = document.getElementById("fraseDaCifrare").value.replaceAll(" ", "").toUpperCase().split("");
     var chiave = parseInt(document.getElementById("chiaveCifratura").value);
     var bitFrase = new Array(fraseDaCifrare.length);
 
-    if(chiave <= 0 || chiave > 25)
+    if(chiave <= 0 || chiave > 25 || isNaN(chiave))
     {
         alert("La chiave di cifratura deve essere compresa tra 1 e 25!")
         chiave = 1;
@@ -16,7 +16,7 @@ function Cifra(){
     {
         bitFrase[i] = fraseDaCifrare[i].charCodeAt(0);
 
-        if(bitFrase[i] < 65 || bitFrase[i] > 90)
+        if(bitFrase[i] < 65 || bitFrase[i] > 90) 
         {
             alert("La frase deve essere composta da lettere dell'alfabeto!")
             break;
@@ -29,7 +29,7 @@ function Cifra(){
     {
         contatore = 0;
 
-        bitFrase[i] = bitFrase[i] + chiave;
+           bitFrase[i] = bitFrase[i] + chiave;
 
         if(bitFrase[i] > 90) //90 è Z
         {
@@ -46,11 +46,11 @@ function Cifra(){
 //Decifratura
 
 function Decifratura(){
-    var fraseDaDecifrare = document.getElementById("fraseDaDecifrare").value.toUpperCase().split("");
+    var fraseDaDecifrare = document.getElementById("fraseDaDecifrare").value.replaceAll(" ", "").toUpperCase().split("");
     var chiave = parseInt(document.getElementById("chiaveDecifratura").value);
     var bitFrase = new Array(fraseDaDecifrare.length);
 
-    if(chiave <= 0 || chiave > 25)
+    if(chiave <= 0 || chiave > 25 || isNaN(chiave))
     {
         alert("La chiave di decifratura deve essere compresa tra 1 e 25!")
         chiave = 1;
@@ -60,18 +60,16 @@ function Decifratura(){
     {
         bitFrase[i] = fraseDaDecifrare[i].charCodeAt(0);
 
-        if(bitFrase[i] < 65 || bitFrase[i] > 90)
+        if(bitFrase[i] < 65 || bitFrase[i] > 90) 
         {
             alert("La frase deve essere composta da lettere dell'alfabeto!")
             break;
         }
     }
 
-    var contatore; 
-
     for(let i = 0; i < fraseDaDecifrare.length; i++)
     {
-        contatore = 0;
+        var contatore = 0;
 
         bitFrase[i] = bitFrase[i] - chiave;
 
@@ -93,10 +91,8 @@ function RicomponiStringa(bitFrase){
 
     bitFrase.forEach(bit => {
         for(let i = 65; i <= 90; i++)
-        {
             if(bit == i)
                 retVal += alfabeto[i - 65];
-        }
     });
 
     return retVal;
